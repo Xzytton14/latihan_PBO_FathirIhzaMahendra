@@ -1,8 +1,20 @@
 -- ==========================================
--- 1. STRUKTUR TABEL (CREATE TABLE)
+-- 1. PEMBUATAN DATABASE
 -- ==========================================
 
-DROP TABLE IF EXISTS tiket;
+-- Hapus database lama jika sudah ada agar tidak bentrok
+DROP DATABASE IF EXISTS db_latihan_pbo_ti_1d_fathir_ihza_mahendra;
+
+-- Buat database baru
+CREATE DATABASE db_latihan_pbo_ti_1d_fathir_ihza_mahendra;
+
+-- Gunakan database yang baru dibuat
+USE db_latihan_pbo_ti_1d_fathir_ihza_mahendra;
+
+
+-- ==========================================
+-- 2. STRUKTUR TABEL (CREATE TABLE)
+-- ==========================================
 
 CREATE TABLE tiket (
     -- Atribut Global (Induk) dengan Auto Increment & Primary Key
@@ -15,7 +27,7 @@ CREATE TABLE tiket (
     
     -- Atribut Spesifik (Anak - Set menjadi Nullable)
     tipe_audio VARCHAR(50) NULL,
-    lokasi_baris VARCHAR(50) NULL, -- Sudah diperlebar ke 50 karakter agar muat text Velvet
+    lokasi_baris VARCHAR(50) NULL, 
     kacamata_3d_id VARCHAR(50) NULL,
     efek_gerak_fitur VARCHAR(100) NULL,
     bantal_selimut_pack BOOLEAN NULL,
@@ -34,7 +46,7 @@ CREATE TABLE tiket (
 
 
 -- ==========================================
--- 2. DATA CONTOH (INSERT INTO) - TOTAL 60 DATA
+-- 3. DATA CONTOH (INSERT INTO) - TOTAL 60 DATA
 -- ==========================================
 
 -- BATCH 1: 15 Film dengan 2 Opsi Studio (Regular & IMAX) -> 30 Data
